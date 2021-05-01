@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.preloader_2 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 2;
+  transition: 1s all;
+  opacity: 1;
+  visibility: visible;]
+}
+
+.wrap {
+  position: relative;
+  margin-top: 200px;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+#backgroundcnv {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.cube {
+  margin: auto;
+  margin-top: -55%;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  transform-style: preserve-3d;
+}
+
+#frontcnv {
+  height: 195px;
+  width: 242px;
+}
+
+#fronttext {
+  cursor: crosshair;
+  -webkit-transition-duration: 1s;
+  color: blue;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 18px;
+  text-align: center;
+  opacity: 0;
+}
+
+#leftcnv {
+  height: 195px;
+  width: 301px;
+}
+
+#lefttext {
+  cursor: crosshair;
+  -webkit-transition-duration: 1s;
+  color: #EEC169;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 0px;
+  text-align: center;
+  opacity: 0;
+}
+
+#rightcnv {
+  height: 195px;
+  width: 242px;
+}
+
+#righttext {
+  transform: rotate(180deg);
+  cursor: crosshair;
+  -webkit-transition-duration: 1s;
+  color: slategrey;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 18px;
+  text-align: center;
+  opacity: 0;
+}
+
+#bottomcnv {
+  height: 195px;
+  width: 242px;
+}
+
+#bottomtext {
+  cursor: crosshair;
+  -webkit-transition-duration: 1s;
+  color: red;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 55px;
+  text-align: center;
+  opacity: 0;
+}
+
+#topcnv {
+  height: 195px;
+  width: 242px;
+}
+
+#toptext {
+  transform: rotate(180deg);
+  cursor: crosshair;
+  -webkit-transition-duration: 1s;
+  color: yellow;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 50px;
+  text-align: center;
+  opacity: 0;
+}
+
+#backcnv {
+  height: 195px;
+  width: 242px;
+}
+
+.cube > div {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  opacity: 0.9;
+  background-color: #000;
+  border: solid 2px #600000;
+  color: #ffffff;
+}
+
+#front {
+  transform: translateZ(100px);
+}
+
+#back {
+  transform: translateZ(-100px) rotateY(180deg);
+}
+
+#right {
+  transform: rotateY(-270deg) translateX(100px);
+  transform-origin: top right;
+}
+
+#left {
+  transform: rotateY(270deg) translateX(-100px);
+  transform-origin: center left;
+}
+
+#top {
+  transform: rotateX(-270deg) translateY(-100px);
+  transform-origin: top center;
+}
+
+#bottom {
+  transform: rotateX(270deg) translateY(100px);
+  transform-origin: bottom center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.cube {
+  animation: rotate 30s infinite linear;
+}
+
+.wrap:hover #front {
+  transform: translateZ(100px);
+}
+
+#fronttext:hover {
+  opacity: 1;
+}
+
+.wrap:hover #back {
+  transform: translateZ(-300px) rotateY(180deg);
+}
+
+.wrap:hover #right {
+  transform: rotateY(-270deg) translateZ(100px) translateX(200px);
+}
+
+#righttext:hover {
+  opacity: 1;
+}
+
+.wrap:hover #left {
+  transform: rotateY(270deg) translateZ(100px) translateX(-200px);
+}
+
+#lefttext:hover {
+  opacity: 1;
+}
+
+.wrap:hover #top {
+  transform: rotateX(-270deg) translateZ(100px) translateY(-200px);
+}
+
+#toptext:hover {
+  opacity: 1;
+}
+
+.wrap:hover #bottom {
+  transform: rotateX(270deg) translateZ(100px) translateY(200px);
+}
+
+#bottomtext:hover {
+  opacity: 1;
+}
+
+.cube > div {
+  transition: transform 0.4s ease-in;
+}
+
